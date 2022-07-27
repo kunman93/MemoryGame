@@ -32,13 +32,13 @@ const defineEventHandlers = (
         const updatedCardContents = [...cardContents]
         const updatedFaceUpCards = [...faceUpCards]
         if(!faceUpCards[cardId]){
-            // Previously, I worked with cardContents instead of creating a copy of updatedCardContents, this fucked up everything
+            // Previously, I worked with cardContents instead of creating a copy of updatedCardContents, this messed up everything
             updatedCardContents[cardId] = emojiSequence[cardId]
             setCardContents(updatedCardContents)
             updatedFaceUpCards[cardId] = true
             setFaceUpCards(updatedFaceUpCards)
         }else {
-            // Previously, I worked with cardContents instead of creating a copy of updatedCardContents, this fucked up everything
+            // Previously, I worked with cardContents instead of creating a copy of updatedCardContents, this messed up everything
             updatedCardContents[cardId] = ""
             setCardContents(updatedCardContents)
             updatedFaceUpCards[cardId] = false
@@ -166,8 +166,8 @@ const MemoryGame = () => {
                         })
                 }
             </View>
-            <View style={styles.newGameText}>
-                <Text onPress={onNewGamePress}>New Game</Text>
+            <View style={styles.newGameTextContainer}>
+                <Text style={styles.newGameText} onPress={onNewGamePress}>New Game</Text>
             </View>
         </View>
     );
@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: 'column',
         justifyContent: 'space-between',
+        alignItems: 'center',
         height: '100%',
         width: '100%'
     },
@@ -187,12 +188,13 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     playerTurnText: {
-        fontSize: 30,
+        fontSize: '10vw',
         textAlign: 'center',
+        paddingTop: 10,
         paddingBottom: 10,
     },
     playerScoreText : {
-        fontSize: 15,
+        fontSize: '5vw',
         textAlign: 'center'
     },
     cardsContainer : {
@@ -205,13 +207,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    emoji : {
-        fontSize: 20
-    },
-    newGameText : {
+    newGameTextContainer : {
         alignItems: 'center',
         paddingBottom: 20,
-        color: 'blue'
+        
+    },
+    newGameText : {
+        fontSize: '5vw',
+        color: 'rgb(0, 171, 255)',
     }
 });
 

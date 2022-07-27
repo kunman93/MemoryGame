@@ -6,7 +6,7 @@ const Card = ({cardId, cardContent, faceUpCard, removedCard, onCardPress}) => {
     if(removedCard){
         return (
             <TouchableOpacity 
-                style={styles.removedCard}>
+                style={[styles.card, styles.removedCard]}>
             </TouchableOpacity>
         );
     }
@@ -14,7 +14,7 @@ const Card = ({cardId, cardContent, faceUpCard, removedCard, onCardPress}) => {
     if(faceUpCard){
         return (
             <TouchableOpacity 
-                style={styles.faceUpCard}
+                style={styles.card}
                 onPress={() => onCardPress(cardId)}>
                     <Text style={styles.emoji}>{cardContent}</Text>
             </TouchableOpacity>
@@ -23,7 +23,7 @@ const Card = ({cardId, cardContent, faceUpCard, removedCard, onCardPress}) => {
 
     return (
         <TouchableOpacity 
-            style={styles.card}
+            style={[styles.card, styles.coveredCard]}
             onPress={() => onCardPress(cardId)}>
                 <Text style={styles.emoji}>{cardContent}</Text>
         </TouchableOpacity>
@@ -33,35 +33,22 @@ const Card = ({cardId, cardContent, faceUpCard, removedCard, onCardPress}) => {
 const styles = StyleSheet.create({
     card : {
         alignItems: 'center',
-        padding: 10,
-        margin: 10,
-        height: 50,
-        width: 50,
+        padding: '1vw',
+        margin: '1vw',
+        height: '15vw',
+        width: '15vw',
         borderWidth: 1,
         borderRadius: 10,
         justifyContent: 'space-evenly',
+    },
+    coveredCard : {
         backgroundColor: 'grey'
     },
-    faceUpCard : {
-        alignItems: 'center',
-        padding: 10,
-        margin: 10,
-        height: 50,
-        width: 50,
-        borderWidth: 1,
-        borderRadius: 10,
-        justifyContent: 'space-evenly',
-    },
     removedCard : {
-        alignItems: 'center',
-        padding: 10,
-        margin: 10,
-        height: 50,
-        width: 50,
-        justifyContent: 'space-evenly'
+        borderWidth: 0,
     },
     emoji : {
-        fontSize: 20
+        fontSize: '5vw'
     },
 });
 
