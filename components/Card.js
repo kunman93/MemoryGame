@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         width: '15vw',
         borderWidth: 1,
         borderRadius: 10,
+        borderColor: 'rgb(6, 104, 104)',
         justifyContent: 'space-evenly',
     },
     coveredCard : {

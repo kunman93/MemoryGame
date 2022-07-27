@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { useState } from 'react';
 import emojis from '../assets/emojis';
 import Card from './Card'
@@ -166,9 +166,9 @@ const MemoryGame = () => {
                         })
                 }
             </View>
-            <View style={styles.newGameTextContainer}>
+            <TouchableOpacity style={styles.newGameTextContainer}>
                 <Text style={styles.newGameText} onPress={onNewGamePress}>New Game</Text>
-            </View>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -181,7 +181,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         height: '100%',
-        width: '100%'
+        width: '100%',
+        backgroundColor: 'rgb(63, 136, 136)',
+        fontWeight: 'bold'
     },
     playerInfoContainer: {
         paddingBottom: 20,
@@ -209,13 +211,17 @@ const styles = StyleSheet.create({
     },
     newGameTextContainer : {
         alignItems: 'center',
-        paddingBottom: 20,
-        
+        padding: 10,
+        marginTop: 10,
+        marginBottom: 10,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: 'rgb(6, 104, 104)',
+        backgroundColor: 'grey'
     },
     newGameText : {
         fontSize: '5vw',
-        color: 'rgb(0, 171, 255)',
-    }
+    },
 });
 
 export default MemoryGame
