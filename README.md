@@ -1,5 +1,5 @@
 # Memory Game App
-This project is a simple Memory Game App based on React Native technology.
+This project is a simple memory game app based on React Native technology.
 ## Setup
 TODO with Lucian
 ## How To Play
