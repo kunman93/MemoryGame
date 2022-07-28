@@ -41,15 +41,26 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: 'rgb(6, 104, 104)',
         justifyContent: 'space-evenly',
+        shadowOffset: { height: 1, width: 1 }, // IOS
+        shadowOpacity: 1, // IOS
+        shadowRadius: 1, //IOS
+        elevation: 2, // Android
     },
     coveredCard : {
         backgroundColor: 'grey'
     },
     removedCard : {
         borderWidth: 0,
+        shadowOffset: 'None',
+        shadowOpacity: 'None', // IOS
+        shadowRadius: 'None', //IOS
+        elevation: 'None', // Android
     },
     emoji : {
-        fontSize: '5vw'
+        fontSize: '5vw',
+        textShadowColor: 'rgba(217, 217, 217, 0.5)',
+        textShadowOffset: { width: 0, height: 0 },
+        textShadowRadius: 20,
     },
 });
 

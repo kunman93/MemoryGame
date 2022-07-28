@@ -1,15 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
 import MemoryGame from './components/MemoryGame'
+import * as Font from 'expo-font'
+import { useFonts } from 'expo-font';
+
 
 export default function App() {
+  const [loadedFont] = useFonts({
+      'IndieFlower-Regular': require('./assets/fonts/IndieFlower-Regular.ttf'),
+    });
+  
+  if(!loadedFont){
+    return null;
+  }
+
   return (
-  <MemoryGame />
+    <MemoryGame />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-  },
-});
