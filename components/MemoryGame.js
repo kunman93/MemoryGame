@@ -29,11 +29,12 @@ const defineEventHandlers = (
         if(!isCardFacedUp(cardId)){
             if(!areTwoCardsFacedUp()){
                 faceUpCard(cardId, updatedCardContents, updatedFaceUpCards)
+                checkIfCardsMatch(updatedCardContents, updatedFaceUpCards)
             }
-        } else if(isCardFacedUp(cardId) && areTwoCardsFacedUp()){
-            keepTheCardCovered(cardId, updatedCardContents, updatedFaceUpCards)
+            if(areTwoCardsFacedUp()){
+                keepTheCardCovered(cardId, updatedCardContents, updatedFaceUpCards)
+            }
         }
-        checkIfCardsMatch(updatedCardContents, updatedFaceUpCards)
     }
 
     const isCardFacedUp = (cardId) => faceUpCards[cardId]
